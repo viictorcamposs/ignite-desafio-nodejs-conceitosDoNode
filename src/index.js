@@ -48,15 +48,17 @@ app.get('/users', (request, response) => {
 });
 
 app.get('/todos', checksExistsUserAccount, (request, response) => {
-  
+  const { user } = request;
+
+  return response.status(200).json(user.todos);
 });
 
 app.post('/todos', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  
 });
 
 app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  
 });
 
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
